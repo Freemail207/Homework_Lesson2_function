@@ -21,7 +21,7 @@ function unique(str) {
     return result;
 }
 /*
-* 2. Write a function that returns a new function,
+* 2. Write a  function that returns a new function,
   by means of which can be output to the console text information. */
 function createLogger(prefix){
     return function(){

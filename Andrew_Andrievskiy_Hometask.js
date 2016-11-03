@@ -2,9 +2,9 @@
  * Created by user on 02.11.2016.
  */
 /*
-* 1. Напишите функцию, которая будет возвращать набор уникальных символов,
-* которые были переданы в эту функцию, как аргумент. Сортировка - не нужна,
-* строчные и заглавные буквы - 1 символ.*/
+* 1. Write a function that will return a set of unique characters,
+* Which have been transferred to the function as an argument. Sorting - is not necessary,
+* Lowercase and capital letters - one character */
 function unique(str) {
     var a=str.toLowerCase().match(/[\d\D]/g);
     var result;
@@ -21,8 +21,8 @@ function unique(str) {
     return result;
 }
 /*
-* 2. Напишите функцию, которая будет возвращать новую функцию,
- с помощью которой можно будет выводить в консоль текстовую информацию.*/
+* 2. Write a function that returns a new function,
+В  by means of which can be output to the console text information. */
 function createLogger(prefix){
     return function(){
         var args = Array.prototype.slice.call(arguments);

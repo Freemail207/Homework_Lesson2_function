@@ -35,3 +35,17 @@ var MyLogger= new createLogger('My logger'),
 
     MyLogger({key:12,key1:13},'Hello!');
     MyNewLogger({key:1,key1:1},'World!');
+// 5+
+function createCleanLogger(prefix){
+    var internalAction = function(){
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift(new Date().toISOString() + ' ' + prefix + ': ');
+        return args;
+    };
+    return new Function("action", "return function " + prefix + "(){\nvar args = action.apply(this, arguments);\n console.log.apply(console, args);\n}")(internalAction);
+}
+var MyCleanLogger= new createCleanLogger('My_logger'),
+    MyNewCleanLogger= new createCleanLogger('My_new_logger');
+
+    MyCleanLogger({cleanKey:12,cleanKey1:13},'Hello!');
+    MyNewCleanLogger({cleanKey:1,cleanKey1:1},'Clean World!');
